@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Entry Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Container Entry Form</h1>
+        
+        <form id="containerForm" class="form">
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required readonly>
+            </div>
+            
+            <div class="form-group">
+                <label for="port">Port:</label>
+                <select id="port" name="port" required>
+                    <option value="">Select a port</option>
+                    <option value="Ålesund">Ålesund</option>
+                    <option value="Stavanger">Stavanger</option>
+                    <option value="Haugesund">Haugesund</option>
+                    <option value="Molde">Molde</option>
+                    <option value="Førde">Førde</option>
+                    <option value="Trondheim">Trondheim</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="containerNumber">Container Number:</label>
+                <input type="text" id="containerNumber" name="containerNumber" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="">Select status</option>
+                    <option value="empty">empty</option>
+                    <option value="B">B</option>
+                    <option value="T">T</option>
+                    <option value="lastcast">lastcast</option>
+                    <option value="module">module</option>
+                    <option value="7pc">7pc</option>
+                    <option value="ADR">ADR</option>
+                    <option value="Ikke ADR">Ikke ADR</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="arrivalTime">Arrival Time:</label>
+                <input type="time" id="arrivalTime" name="arrivalTime" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="3" placeholder="Enter any additional comments..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Add Entry</button>
+            <button type="button" id="cancelEdit" class="cancel-btn" style="display: none;">Cancel Edit</button>
+        </form>
+        
+        <div class="table-container">
+            <h2>Container Entries</h2>
+            <table id="containerTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Port</th>
+                        <th>Container Number</th>
+                        <th>Status</th>
+                        <th>Arrival Time</th>
+                        <th>Comment</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data rows will be inserted here -->
+                </tbody>
+            </table>
+            <div id="noDataMessage" class="no-data">No container entries yet. Add your first entry above.</div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
